@@ -1,17 +1,14 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
-import core.BaseTest;
+
+import business.FoldhaziTest;
 
 import org.openqa.selenium.By;
 
-public class FirstTest extends BaseTest {
+public class FirstTest extends FoldhaziTest {
 
     @Test
     public void OpenHomePage() {
-        driver.get("https://www.peterfoldhazi.com");
-        assertEquals("Péter Földházi Jr. - Test Automation", driver.getTitle());
-
         driver.findElement(By.id("comp-kd46oy0r1label")).click();
         assertEquals("About | Péter Földházi Jr.", driver.getTitle());
 
