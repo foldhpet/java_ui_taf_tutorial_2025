@@ -1,15 +1,14 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+import core.BaseTest;
+
 import org.openqa.selenium.By;
 
-public class FirstTest {
-    protected ChromeDriver driver;
+public class FirstTest extends BaseTest {
 
     @Test
     public void OpenHomePage() {
-        driver = new ChromeDriver();
-
         driver.get("https://www.peterfoldhazi.com");
         assertEquals("Péter Földházi Jr. - Test Automation", driver.getTitle());
 
@@ -27,7 +26,5 @@ public class FirstTest {
 
         driver.findElement(By.id("comp-kd46oy0r5label")).click();
         assertEquals("Contact | Péter Földházi Jr.", driver.getTitle());
-
-        driver.quit();
     }
 }

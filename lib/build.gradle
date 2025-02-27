@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     // JUnit Jupiter test harness.
-    testImplementation libs.junit.jupiter
+    implementation libs.junit.jupiter
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
