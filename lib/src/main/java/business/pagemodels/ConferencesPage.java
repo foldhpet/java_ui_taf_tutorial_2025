@@ -11,7 +11,7 @@ public class ConferencesPage extends BasePage {
 
     public ConferencesPage() throws IllegalAccessException {
         if (!driver.getTitle().equals("Conferences | Péter Földházi Jr.")) {
-            throw new IllegalAccessException("You are not on the About Page, current page is: " +
+            throw new IllegalAccessException("You are not on the Conferences Page, current page is: " +
                     Driver.getDriver().getCurrentUrl());
         }
     }
