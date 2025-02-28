@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class FirstTest extends FoldhaziTest {
 
     @Test
-    public void OpenHomePage() throws IllegalAccessException {
+    public void OpenHomePage() {
         driver.findElement(By.id("comp-kd46oy0r1label")).click();
         assertEquals("About | Péter Földházi Jr.", driver.getTitle());
 
