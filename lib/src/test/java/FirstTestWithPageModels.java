@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import business.FoldhaziTest;
 import business.pagemodels.AboutPage;
 import business.pagemodels.ArticlesPage;
+import business.pagemodels.BlogPage;
 import business.pagemodels.ConferencesPage;
 import business.pagemodels.HomePage;
 
@@ -29,7 +30,8 @@ public class FirstTestWithPageModels extends FoldhaziTest {
         assertEquals("HIGHLIGHTED ARTICLES", articlesPage.articlesPageHeader().getText());
 
         driver.findElement(By.id("comp-kd46oy0r4label")).click();
-        assertEquals("Blog | Péter Földházi Jr.", driver.getTitle());
+        BlogPage blogPage = new BlogPage();
+        assertEquals("BLOG", blogPage.blogPageHeader().getText());
 
         driver.findElement(By.id("comp-kd46oy0r5label")).click();
         assertEquals("Contact | Péter Földházi Jr.", driver.getTitle());
