@@ -6,6 +6,7 @@ import business.pagemodels.AboutPage;
 import business.pagemodels.ArticlesPage;
 import business.pagemodels.BlogPage;
 import business.pagemodels.ConferencesPage;
+import business.pagemodels.ContactPage;
 import business.pagemodels.HomePage;
 
 import org.openqa.selenium.By;
@@ -34,6 +35,7 @@ public class FirstTestWithPageModels extends FoldhaziTest {
         assertEquals("BLOG", blogPage.blogPageHeader().getText());
 
         driver.findElement(By.id("comp-kd46oy0r5label")).click();
-        assertEquals("Contact | Péter Földházi Jr.", driver.getTitle());
+        ContactPage contactPage = new ContactPage();
+        assertEquals("CONTACT", contactPage.contactPageHeader().getText());
     }
 }
