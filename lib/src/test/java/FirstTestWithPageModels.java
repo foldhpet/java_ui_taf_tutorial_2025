@@ -8,8 +8,7 @@ import business.pagemodels.BlogPage;
 import business.pagemodels.ConferencesPage;
 import business.pagemodels.ContactPage;
 import business.pagemodels.HomePage;
-
-import org.openqa.selenium.By;
+import business.pagemodels.MenuWidget;
 
 public class FirstTestWithPageModels extends FoldhaziTest {
 
@@ -18,23 +17,24 @@ public class FirstTestWithPageModels extends FoldhaziTest {
         HomePage homePage = new HomePage();
         assertEquals("Péter Földházi Jr.", homePage.homePageHeader().getText());
 
-        driver.findElement(By.id("comp-kd46oy0r1label")).click();
+        MenuWidget menuWidget = new MenuWidget();
+        menuWidget.aboutPageMenuItem().click();
         AboutPage aboutPage = new AboutPage();
         assertEquals("ABOUT", aboutPage.aboutPageHeader().getText());
 
-        driver.findElement(By.id("comp-kd46oy0r2label")).click();
+        menuWidget.conferencesPageMenuItem().click();
         ConferencesPage conferencesPage = new ConferencesPage();
         assertEquals("CONFERENCES", conferencesPage.conferencesPageHeader().getText());
 
-        driver.findElement(By.id("comp-kd46oy0r3label")).click();
+        menuWidget.articlesPageMenuItem().click();
         ArticlesPage articlesPage = new ArticlesPage();
         assertEquals("HIGHLIGHTED ARTICLES", articlesPage.articlesPageHeader().getText());
 
-        driver.findElement(By.id("comp-kd46oy0r4label")).click();
+        menuWidget.blogPageMenuItem().click();
         BlogPage blogPage = new BlogPage();
         assertEquals("BLOG", blogPage.blogPageHeader().getText());
 
-        driver.findElement(By.id("comp-kd46oy0r5label")).click();
+        menuWidget.contactPageMenuItem().click();
         ContactPage contactPage = new ContactPage();
         assertEquals("CONTACT", contactPage.contactPageHeader().getText());
     }
