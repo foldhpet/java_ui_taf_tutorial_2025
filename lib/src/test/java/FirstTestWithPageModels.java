@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import business.FoldhaziTest;
+import business.pagemodels.AboutPage;
 import business.pagemodels.HomePage;
 
 import org.openqa.selenium.By;
@@ -14,7 +15,8 @@ public class FirstTestWithPageModels extends FoldhaziTest {
         assertEquals("Péter Földházi Jr.", homePage.homePageHeader().getText());
 
         driver.findElement(By.id("comp-kd46oy0r1label")).click();
-        assertEquals("About | Péter Földházi Jr.", driver.getTitle());
+        AboutPage aboutPage = new AboutPage();
+        assertEquals("ABOUT", aboutPage.aboutPageHeader().getText());
 
         driver.findElement(By.id("comp-kd46oy0r2label")).click();
         assertEquals("Conferences | Péter Földházi Jr.", driver.getTitle());
